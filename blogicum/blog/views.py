@@ -50,8 +50,9 @@ def index(request: HttpRequest) -> HttpResponse:
     """View-функция для страницы 'Лента записей'."""
     template = 'blog/index.html'
     reversed_posts = list(reversed(posts))
-    context = {'posts': reversed_posts} 
+    context = {'posts': reversed_posts}
     return render(request, template, context)
+
 
 def post_detail(request: HttpRequest, id: int) -> HttpResponse:
     """View-функция для детального просмотра одной записи."""
