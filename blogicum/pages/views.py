@@ -1,12 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpRequest, HttpResponse
+from django.views.generic.base import TemplateView
 
 
-def about(request: HttpRequest) -> HttpResponse:
-    """View-функция для страницы 'О проекте'."""
-    return render(request, 'pages/about.html')
+class AboutView(TemplateView):
+    """Класс-представление для страницы 'О проекте'."""
+    template_name = 'pages/about.html'
 
 
-def rules(request: HttpRequest) -> HttpResponse:
-    """View-функция для страницы 'Наши правила'."""
-    return render(request, 'pages/about.html')
+class RulesView(TemplateView):
+    """Класс-представление для страницы 'Наши правила'."""
+    template_name = 'pages/rules.html'
