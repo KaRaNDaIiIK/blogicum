@@ -58,7 +58,7 @@ def post_detail(request: HttpRequest, post_id: int) -> HttpResponse:
     try:
         post = posts[post_id]  # Получаем конкретный пост по ID
     except IndexError:
-        raise Http404("Запись не найдена")
+        raise Http404('Запись не найдена')
     context = {'post': post}
     return render(request, 'blog/detail.html', context)
 
